@@ -1,0 +1,11 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Lingua-Sentence.t
+t/nonbreaking_prefix.de
+lib/Lingua/Sentence.pm
+lib/Lingua/nonbreaking_prefix.en
+lib/Lingua/nonbreaking_prefix.el
+lib/Lingua/nonbreaking_prefix.de
+lib/Lingua/nonbreaking_prefix.pt

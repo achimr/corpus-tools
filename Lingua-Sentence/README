@@ -1,0 +1,39 @@
+Lingua-Sentence version 1.00
+============================
+
+This module allows splitting of text paragraphs into sentences. 
+It is based on scripts developed by Philipp Koehn and Josh Schroeder
+for processing the Europarl corpus.  The module uses punctuation and 
+capitalization clues to split paragraphs into an newline-separated 
+string with one sentence per line.
+
+The module provides support for English, German, Portuguese and Greek.
+Optionally files providing hints for other languages can be provided.
+
+INSTALLATION
+
+To install this module type the following:
+
+   perl Makefile.PL
+   make
+   make test
+   make install
+
+DEPENDENCIES
+
+This module requires these other modules and libraries:
+
+  Carp; File::Basename
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2010 by Digital Silk Road
+
+Portions Copyright (C) 2005 by Philip Koehn and Josh Schroeder (used with permission)
+
+Portuguese nonbreaking prefix file copyright (C) 2009 by Hilário Leal Fontes (used with permission)
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself, either Perl version 5.8.9 or,
+at your option, any later version of Perl 5 you may have available.
+
