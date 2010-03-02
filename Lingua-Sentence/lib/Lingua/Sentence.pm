@@ -1,6 +1,6 @@
 package Lingua::Sentence;
 
-use 5.008009;
+use 5.008008;
 use strict;
 use warnings;
 
@@ -258,10 +258,10 @@ Copyright (C) 2010 by Digital Silk Road
 
 Portions Copyright (C) 2005 by Philip Koehn and Josh Schroeder (used with permission)
 
-Portuguese nonbreaking prefix file copyright (C) 2009 by Hilário Leal Fontes (used with permission)
+Portuguese nonbreaking prefix file copyright (C) 2009 by HilE<aacute>rio Leal Fontes (used with permission)
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.9 or,
+it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
 
 
