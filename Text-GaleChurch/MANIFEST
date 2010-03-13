@@ -1,0 +1,6 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Text-GaleChurch.t
+lib/Text/GaleChurch.pm
