@@ -1,4 +1,4 @@
-Lingua-Sentence version 1.00
+Lingua-Sentence version 1.02
 ============================
 
 This module allows splitting of text paragraphs into sentences. 
@@ -23,7 +23,7 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  Carp; File::Basename
+  Carp; File::ShareDir; Test::More
 
 COPYRIGHT AND LICENCE
 
@@ -34,6 +34,6 @@ Portions Copyright (C) 2005 by Philip Koehn and Josh Schroeder (used with permis
 Portuguese nonbreaking prefix file copyright (C) 2009 by Hilário Leal Fontes (used with permission)
 
 This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.9 or,
+it under the same terms as Perl itself, either Perl version 5.8.8 or,
 at your option, any later version of Perl 5 you may have available.
 

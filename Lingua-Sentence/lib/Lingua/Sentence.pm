@@ -18,7 +18,7 @@ our @EXPORT_OK = qw(new split split_array);
 
 our @EXPORT = qw(new split split_array);
 
-our $VERSION = '1.01';
+our $VERSION = '1.02';
 
 
 # Preloaded methods go here.
@@ -190,29 +190,20 @@ Languages currently supported by the module are:
 
 =over
 
-=item Catalan
 
 =item Dutch
 
 =item English
 
+=item French
+
 =item German
 
 =item Greek
 
-=item Icelandic
-
-=item Polish
+=item Italian
 
 =item Portuguese
-
-=item Romanian
-
-=item Russian
-
-=item Slovak
-
-=item Slovenian
 
 =item Spanish
 
@@ -261,9 +252,9 @@ Split sentences in $text into an array of sentences.
 
 =head1 SUPPORT
 
-Bugs should always be submitted via the CPAN bug tracker
+Bugs should always be submitted via the project hosting bug tracker
 
-L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Lingua-Sentence>
+L<http://code.google.com/p/corpus-tools/issues/list>
 
 For other issues, contact the maintainer.
 
@@ -282,8 +273,6 @@ Copyright (C) 2010 by Digital Silk Road
 Portions Copyright (C) 2005 by Philip Koehn and Josh Schroeder (used with permission)
 
 Portuguese nonbreaking prefix file copyright (C) 2009 by HilE<aacute>rio Leal Fontes (used with permission)
-
-Additional language nonbreaking prefix files converted from LanguageTool and OmegaT segmentation rules.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,

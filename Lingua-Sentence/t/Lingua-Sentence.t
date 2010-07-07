@@ -48,10 +48,10 @@ my $pt_splitter = Lingua::Sentence->new("pt");
 isa_ok($pt_splitter,'Lingua::Sentence');
 is($pt_splitter->split('Isto é um parágrafo. Contém várias frases. «Mas porquê,» perguntas tu?'),"Isto é um parágrafo.\nContém várias frases.\n«Mas porquê,» perguntas tu?\n","Portuguese split test");
 
-# Spanish split test with English split prefixes
+# Spanish split test 
 my $es_splitter = Lingua::Sentence->new("es");
 isa_ok($es_splitter,'Lingua::Sentence');
-is($es_splitter->split('La UE ofrece una gran variedad de empleos en un entorno multinacional y multilingüe. La Oficina Europea de Selección de Personal (EPSO) se ocupa de la contratación, sobre todo mediante oposiciones generales.'),"La UE ofrece una gran variedad de empleos en un entorno multinacional y multilingüe.\nLa Oficina Europea de Selección de Personal (EPSO) se ocupa de la contratación, sobre todo mediante oposiciones generales.\n","Spanish split with fallback");
+is($es_splitter->split('La UE ofrece una gran variedad de empleos en un entorno multinacional y multilingüe. La Oficina Europea de Selección de Personal (EPSO) se ocupa de la contratación, sobre todo mediante oposiciones generales.'),"La UE ofrece una gran variedad de empleos en un entorno multinacional y multilingüe.\nLa Oficina Europea de Selección de Personal (EPSO) se ocupa de la contratación, sobre todo mediante oposiciones generales.\n","Spanish split test");
 
 # Split test with custom prefix file
 ok( -e 't/nonbreaking_prefix.de');
