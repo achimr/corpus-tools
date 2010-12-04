@@ -1,5 +1,9 @@
 Revision history for Perl extension Lingua::Sentence.
 
+1.03  Sat Dec 04 17:40:00 2010
+	- added language support for Catalan and Dutch
+	- update language support for Spanish
+
 1.02  Wed July 07 11:47:00 2010
 	- added language support for French, Italian, Spanish
 	- switched to File::ShareDir to access nonbreaking prefix files

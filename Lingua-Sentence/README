@@ -1,4 +1,4 @@
-Lingua-Sentence version 1.02
+Lingua-Sentence version 1.03
 ============================
 
 This module allows splitting of text paragraphs into sentences. 
@@ -7,7 +7,8 @@ for processing the Europarl corpus.  The module uses punctuation and
 capitalization clues to split paragraphs into an newline-separated 
 string with one sentence per line.
 
-The module provides support for English, German, Portuguese and Greek.
+The module provides support for Catalan, English, German, Portuguese, Spanish,
+Italian, French, Dutch and Greek.
 Optionally files providing hints for other languages can be provided.
 
 INSTALLATION
@@ -23,7 +24,7 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  Carp; File::ShareDir; Test::More
+  Module::Install; Carp; File::ShareDir; Test::More
 
 COPYRIGHT AND LICENCE
 

@@ -18,7 +18,7 @@ our @EXPORT_OK = qw(new split split_array);
 
 our @EXPORT = qw(new split split_array);
 
-our $VERSION = '1.02';
+our $VERSION = '1.03';
 
 
 # Preloaded methods go here.
@@ -191,6 +191,8 @@ Languages currently supported by the module are:
 =over
 
 
+=item Catalan
+
 =item Dutch
 
 =item English
@@ -227,6 +229,11 @@ A special case of prefixes, NUMERIC_ONLY, is included for special cases where th
 For example, "Article No. 24 states this." the No. is a nonbreaking prefix. However, in "No. It is not true." No functions as a word.
 
 See the example prefix files included in the distribution for more examples.
+
+=head3 CREDITS
+
+Thanks for the following individuals for supplying nonbreaking prefix files:
+Bas Rozema (Dutch), HilE<aacute>rio Leal Fontes (Portuguese), JesE<uacute>s GimE<eacute>nez (Catalan & Spanish)
 
 =head2 EXPORT
 
@@ -271,8 +278,6 @@ Achim Ruopp, E<lt>achimru@gmail.comE<gt>
 Copyright (C) 2010 by Digital Silk Road
 
 Portions Copyright (C) 2005 by Philip Koehn and Josh Schroeder (used with permission)
-
-Portuguese nonbreaking prefix file copyright (C) 2009 by HilE<aacute>rio Leal Fontes (used with permission)
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself, either Perl version 5.8.8 or,
