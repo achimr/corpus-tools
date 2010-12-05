@@ -1,8 +1,10 @@
 # Version control files
-\B\.svn\B
+\.svn
 
 # Build files
 ^Makefile$
+^Makefile.old$
+^META.yml$
 ^blib/
 
 # Editor files

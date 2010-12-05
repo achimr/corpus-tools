@@ -24,7 +24,7 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  Module::Install; Carp; File::ShareDir; Test::More
+  Carp; File::ShareDir; Test::More
 
 COPYRIGHT AND LICENCE
 
