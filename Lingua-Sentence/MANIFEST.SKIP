@@ -4,7 +4,6 @@
 # Build files
 ^Makefile$
 ^Makefile.old$
-^META.yml$
 ^blib/
 
 # Editor files
