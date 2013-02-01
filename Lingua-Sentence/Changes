@@ -1,5 +1,14 @@
 Revision history for Perl extension Lingua::Sentence.
 
+1.04  Fri Feb 01 15:30:00 2013
+	- added language support for Czech, Hungarian, Icelandic, Latvian, 
+	  Polish, Romanian, Russian, Slovak, Slovenian and Swedish
+	- changed license to LGPLv3 because language support files come under 
+	  this license
+	- fixed RT issue #82069: Sentences with more than one trailing 
+	  whitespace not split
+	- removed use of Exporter as this is object-oriented module
+
 1.03  Sat Dec 04 17:40:00 2010
 	- added language support for Catalan and Dutch
 	- update language support for Spanish

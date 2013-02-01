@@ -4,21 +4,10 @@ use 5.008008;
 use strict;
 use warnings;
 
-require Exporter;
 use Carp qw(croak);
 use File::ShareDir 'dist_dir';
 
-our @ISA = qw(Exporter);
-
-# Items to export into callers namespace by default. Note: do not export
-# names by default without a very good reason. Use EXPORT_OK instead.
-# Do not simply export all your public functions/methods/constants.
-
-our @EXPORT_OK = qw(new split split_array);
-
-our @EXPORT = qw(new split split_array);
-
-our $VERSION = '1.03';
+our $VERSION = '1.04';
 
 
 # Preloaded methods go here.
@@ -117,7 +106,7 @@ sub _preprocess {
 	# special punctuation cases are covered. Check all remaining periods.
 	my $word;
 	my $i;
-	my @words = split(/ /,$text);
+	my @words = split(/ +/,$text);
 	$text = "";
 	for ($i=0;$i<(scalar(@words)-1);$i++) {
 		if ($words[$i] =~ /([\p{IsAlnum}\.\-]*)([\'\"\)\]\%\p{IsPf}]*)(\.+)$/) {
@@ -193,6 +182,8 @@ Languages currently supported by the module are:
 
 =item Catalan
 
+=item Czech
+
 =item Dutch
 
 =item English
@@ -203,11 +194,27 @@ Languages currently supported by the module are:
 
 =item Greek
 
+=item Hungarian
+
+=item Icelandic
+
 =item Italian
+
+=item Latvian
+
+=item Polish
 
 =item Portuguese
 
+=item Russian
+
 =item Spanish
+
+=item Slovak
+
+=item Slovenian
+
+=item Swedish
 
 =back
 
@@ -279,9 +286,17 @@ Copyright (C) 2010 by Digital Silk Road
 
 Portions Copyright (C) 2005 by Philip Koehn and Josh Schroeder (used with permission)
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself, either Perl version 5.8.8 or,
-at your option, any later version of Perl 5 you may have available.
-
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+ 
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU Lesser General Public License for more details.
+ 
+You should have received a copy of the GNU Lesser General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 =cut

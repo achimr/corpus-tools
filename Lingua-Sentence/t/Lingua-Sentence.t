@@ -5,7 +5,7 @@
 
 # change 'tests => 1' to 'tests => last_test_to_print';
 
-use Test::More tests => 21;
+use Test::More tests => 33;
 BEGIN { use_ok('Lingua::Sentence') };
 
 #########################
@@ -26,6 +26,26 @@ is(@split,3,'Three elements in split array');
 is($split[0],'This is a paragraph.','First array element correct');
 is($split[1],'It contains several sentences.','Second array element correct');
 is($split[2],'"But why," you ask?','Third array element correct');
+
+@split = $splitter->split_array('Hey! Now.');
+is(@split,2,'Two elements in split array');
+is($split[0],'Hey!','First array element correct');
+is($split[1],'Now.','Second array element correct');
+
+@split = $splitter->split_array('Hey... Now.');
+is(@split,2,'Two elements in split array');
+is($split[0],'Hey...','First array element correct');
+is($split[1],'Now.','Second array element correct');
+
+@split = $splitter->split_array('Hey. Now.');
+is(@split,2,'Two elements in split array');
+is($split[0],'Hey.','First array element correct');
+is($split[1],'Now.','Second array element correct');
+
+@split = $splitter->split_array('Hey.  Now.');
+is(@split,2,'Two elements in split array');
+is($split[0],'Hey.','First array element correct');
+is($split[1],'Now.','Second array element correct');
 
 # Create splitter for language that does not exist in current ISO 639-2 list
 my $xo_splitter = Lingua::Sentence->new("xo");
