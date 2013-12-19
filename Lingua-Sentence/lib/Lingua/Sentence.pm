@@ -240,7 +240,7 @@ See the example prefix files included in the distribution for more examples.
 =head3 CREDITS
 
 Thanks for the following individuals for supplying nonbreaking prefix files:
-Bas Rozema (Dutch), HilE<aacute>rio Leal Fontes (Portuguese), JesE<uacute>s GimE<eacute>nez (Catalan & Spanish)
+Bas Rozema (Dutch), HilE<aacute>rio Leal Fontes (Portuguese), JesE<uacute>s GimE<eacute>nez (Catalan & Spanish), Anne-Kathrin Schumann (Russian)
 
 =head2 EXPORT
 
