@@ -1,19 +1,7 @@
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl Lingua-Sentence.t'
-
-#########################
-
-# change 'tests => 1' to 'tests => last_test_to_print';
-
-use Test::More tests => 33;
-BEGIN { use_ok('Lingua::Sentence') };
-
-#########################
-
-# Insert your test code below, the Test::More module is use()ed here so read
-# its man page ( perldoc Test::More ) for help writing this test script.
-
+use strict;
+use warnings;
 use Lingua::Sentence;
+use Test::More tests => 32;
 
 # English split test string and array results
 my $splitter = Lingua::Sentence->new("en");
@@ -68,7 +56,7 @@ my $pt_splitter = Lingua::Sentence->new("pt");
 isa_ok($pt_splitter,'Lingua::Sentence');
 is($pt_splitter->split('Isto é um parágrafo. Contém várias frases. «Mas porquê,» perguntas tu?'),"Isto é um parágrafo.\nContém várias frases.\n«Mas porquê,» perguntas tu?\n","Portuguese split test");
 
-# Spanish split test 
+# Spanish split test
 my $es_splitter = Lingua::Sentence->new("es");
 isa_ok($es_splitter,'Lingua::Sentence');
 is($es_splitter->split('La UE ofrece una gran variedad de empleos en un entorno multinacional y multilingüe. La Oficina Europea de Selección de Personal (EPSO) se ocupa de la contratación, sobre todo mediante oposiciones generales.'),"La UE ofrece una gran variedad de empleos en un entorno multinacional y multilingüe.\nLa Oficina Europea de Selección de Personal (EPSO) se ocupa de la contratación, sobre todo mediante oposiciones generales.\n","Spanish split test");

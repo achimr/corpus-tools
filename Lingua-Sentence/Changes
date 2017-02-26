@@ -1,22 +1,33 @@
-Revision history for Perl extension Lingua::Sentence.
+{{$dist->name}}
 
-1.04  Fri Feb 01 15:30:00 2013
-	- added language support for Czech, Hungarian, Icelandic, Latvian, 
-	  Polish, Romanian, Russian, Slovak, Slovenian and Swedish
-	- changed license to LGPLv3 because language support files come under 
-	  this license
-	- fixed RT issue #82069: Sentences with more than one trailing 
-	  whitespace not split
-	- removed use of Exporter as this is object-oriented module
+{{$NEXT}}
+    - Moved to Dist::Zilla
+    - Moved to ExtUtils::MakeMaker
+    - Tidied the code to get rid of the tabs and spaces problem
+    - Removed use of non-ASCII characters in the regular expressions.
+      Use the \x{} syntax instead.
+    - Un-escaped several regular expressions non-metacharacters
 
-1.03  Sat Dec 04 17:40:00 2010
-	- added language support for Catalan and Dutch
-	- update language support for Spanish
+1.05     2013-12-19
+    - added language support for Danish, Finnish, Lithuanian and updated
+      language support for Greek
 
-1.02  Wed July 07 11:47:00 2010
-	- added language support for French, Italian, Spanish
-	- switched to File::ShareDir to access nonbreaking prefix files
+1.04     2013-02-01
+    - added language support for Czech, Hungarian, Icelandic, Latvian,
+      Polish, Romanian, Russian, Slovak, Slovenian and Swedish
+    - changed license to LGPLv3 because language support files come under
+      this license
+    - fixed RT issue #82069: Sentences with more than one trailing
+      whitespace not split
+    - removed use of Exporter as this is object-oriented module
 
-1.00  Thu Feb 18 15:07:00 2010
-	- original version
+1.03     2010-12-04
+    - added language support for Catalan and Dutch
+    - update language support for Spanish
 
+1.02     2010-07-07
+    - added language support for French, Italian, Spanish
+    - switched to File::ShareDir to access nonbreaking prefix files
+
+1.00     2010-02-18
+    - original version

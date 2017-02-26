@@ -1,0 +1,10 @@
+Lingua-Sentence-*.tar.gz
+Lingua-Sentence-*/
+Build
+META.yml
+MYMETA.json
+MYMETA.yml
+_build/
+blib/
+cover_db/
+.build/
