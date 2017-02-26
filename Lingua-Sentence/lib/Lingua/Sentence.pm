@@ -5,61 +5,59 @@ use warnings;
 
 use Carp           ();
 use File::ShareDir ();
+use File::Spec     ();
+use Path::Tiny     ();
 
 our $VERSION = '1.100';
 $VERSION = eval $VERSION;
 
 sub new {
-    ref(my $class = shift) and Carp::croak "Class name needed";
-    my $langid = shift;
-    if ($langid !~ /^[a-z][a-z]$/) {
-        Carp::croak "Invalid language id: $langid";
-    }
-    my $prefixfile = shift;
+    my ($class, $lang_id, $prefix_file) = @_;
+    Carp::croak("Invalid language id: $lang_id") unless ($lang_id && $lang_id =~ /^[a-z][a-z]$/i);
 
     # Try loading nonbreaking prefix file specified in constructor
     my $dir = File::ShareDir::dist_dir('Lingua-Sentence');
-    if (defined($prefixfile)) {
-        if (!(-e $prefixfile)) {
-            print STDERR
-                "WARNING: Specified prefix file '$prefixfile' does not exist, attempting fall-back to $langid version...\n";
-            $prefixfile = "$dir/nonbreaking_prefix.$langid";
+    my $fallback = File::Spec->catfile($dir, 'nonbreaking_prefix.' . $lang_id);
+    my $fallback_en = File::Spec->catfile($dir, 'nonbreaking_prefix.en');
+    if (defined($prefix_file)) {
+        unless (-e $prefix_file) {
+            warn "WARNING: Specified prefix file '$prefix_file' does not exist, attempting fall-back to $lang_id version...\n";
+            $prefix_file = $fallback;
         }
     }
     else {
-        $prefixfile = "$dir/nonbreaking_prefix.$langid";
+        $prefix_file = $fallback;
     }
-
-    my %NONBREAKING_PREFIX;
 
     #default back to English if we don't have a language-specific prefix file
-    if (!(-e $prefixfile)) {
-        $prefixfile = "$dir/nonbreaking_prefix.en";
-        print STDERR
-            "WARNING: No known abbreviations for language '$langid', attempting fall-back to English version...\n";
-        die("ERROR: No abbreviations files found in $dir\n")
-            unless (-e $prefixfile);
-    }
-    if (-e "$prefixfile") {
-        open(PREFIX, "<:utf8", "$prefixfile");
-        while (<PREFIX>) {
-            my $item = $_;
-            chomp($item);
-            if (($item) && (substr($item, 0, 1) ne "#")) {
-                if ($item =~ /(.*)[\s]+(\#NUMERIC_ONLY\#)/) {
-                    $NONBREAKING_PREFIX{$1} = 2;
-                }
-                else {
-                    $NONBREAKING_PREFIX{$item} = 1;
-                }
-            }
-        }
-        close(PREFIX);
+    unless (-e $prefix_file) {
+        $prefix_file = $fallback_en;
+        warn "WARNING: No known abbreviations for language '$lang_id', attempting fall-back to English version...\n";
     }
 
-    my $self = {LangID => $langid, Nonbreaking => \%NONBREAKING_PREFIX};
-    bless $self, $class;
-    return $self;
+    # grab all non-breaking prefixes and store them in a hashref
+    my $nb_prefix = {};
+    my $pt = Path::Tiny::path($prefix_file);
+    if ($pt->is_file) {
+        for my $line ($pt->lines_utf8({chomp => 1})) {
+            next unless $line;
+            next if substr($line, 0, 1) eq '#';
+            if ($line =~ /^(.*?)\s+#NUMERIC_ONLY#/) {
+                $nb_prefix->{$1} = 2;
+            }
+            else {
+                $nb_prefix->{$line} = 1;
+            }
+        }
+    }
+    else {
+        die("ERROR: No abbreviations files found in $dir\n");
+    }
+
+    return bless {
+        LangID => $lang_id,
+        Nonbreaking => $nb_prefix,
+    }, $class;
 }
 
 sub split {
@@ -99,11 +97,11 @@ sub _preprocess {
     #multi-dots followed by sentence starters
     $text =~ s/(\.[\.]+) +(['"([\x{00bf}\x{00A1}\p{IsPi}]*[\p{IsUpper}])/$1\n$2/g;
 
-# add breaks for sentences that end with some sort of punctuation inside a quote or parenthetical and are followed by a possible sentence starter punctuation and upper case
+    # add breaks for sentences that end with some sort of punctuation inside a quote or parenthetical and are followed by a possible sentence starter punctuation and upper case
     $text
         =~ s/([?!\.][\ ]*['")\]\p{IsPf}]+) +(['"([\x{00bf}\x{00A1}\p{IsPi}]*[\ ]*[\p{IsUpper}])/$1\n$2/g;
 
-# add breaks for sentences that end with some sort of punctuation are followed by a sentence starter punctuation and upper case
+    # add breaks for sentences that end with some sort of punctuation are followed by a sentence starter punctuation and upper case
     $text =~ s/([?!\.]) +(['"([\x{00bf}\x{00A1}\p{IsPi}]+[\ ]*[\p{IsUpper}])/$1\n$2/g;
 
     # special punctuation cases are covered. Check all remaining periods.

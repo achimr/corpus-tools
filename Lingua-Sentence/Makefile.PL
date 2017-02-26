@@ -26,6 +26,8 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Carp" => 0,
     "File::ShareDir" => "1.02",
+    "File::Spec" => 0,
+    "Path::Tiny" => 0,
     "strict" => 0,
     "warnings" => 0
   },
@@ -46,6 +48,7 @@ my %FallbackPrereqs = (
   "ExtUtils::MakeMaker" => 0,
   "File::ShareDir" => "1.02",
   "File::Spec" => 0,
+  "Path::Tiny" => 0,
   "Test::More" => 0,
   "strict" => 0,
   "warnings" => 0
