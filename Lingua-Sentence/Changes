@@ -7,6 +7,9 @@
     - Removed use of non-ASCII characters in the regular expressions.
       Use the \x{} syntax instead.
     - Un-escaped several regular expressions non-metacharacters
+    - Removed usage of two-arg open
+    - Removed bareword file handles
+    - Use File::Spec and Path::Tiny to slurp files
 
 1.05     2013-12-19
     - added language support for Danish, Finnish, Lithuanian and updated
