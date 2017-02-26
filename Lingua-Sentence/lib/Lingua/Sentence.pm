@@ -8,7 +8,7 @@ use File::ShareDir ();
 use File::Spec     ();
 use Path::Tiny     ();
 
-our $VERSION = '1.100';
+our $VERSION = '1.101';
 $VERSION = eval $VERSION;
 
 sub new {

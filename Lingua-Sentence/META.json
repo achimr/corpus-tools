@@ -77,7 +77,7 @@
    "provides" : {
       "Lingua::Sentence" : {
          "file" : "lib/Lingua/Sentence.pm",
-         "version" : "1.100"
+         "version" : "1.101"
       }
    },
    "release_status" : "stable",
@@ -92,7 +92,7 @@
          "web" : "https://github.com/achimr/corpus-tools"
       }
    },
-   "version" : "1.100",
+   "version" : "1.101",
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.024000"
@@ -403,7 +403,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "v1.100",
+                  "tag" : "v1.101",
                   "tag_format" : "v%v",
                   "tag_message" : "v%v"
                },
